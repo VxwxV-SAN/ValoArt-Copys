@@ -2,7 +2,7 @@
 
 - **¡Contribuciones son bienvenidas!** Si eres nuevo en el desarrollo, este es un proyecto amigable para aprender y colaborar.
 
-Bienvenidos al repositorio Biblioteca Copy Pastes. Este es un proyecto en desarrollo que te permite almacenar dibujos en modo pixel art para el chat del juego Valorant.
+Bienvenidos al repositorio Biblioteca ValoArt Copys. Este es un proyecto en desarrollo que te permite almacenar dibujos en modo pixel art para el chat del juego Valorant.
 
 ![Captura de Pantalla 1](https://github.com/VxwxV-SAN/biblioteca-de-copy-pastes/assets/143349085/f273c7de-8a93-4054-a460-3a027e8dd365)
 
