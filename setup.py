@@ -11,7 +11,7 @@ executables = [Executable("x.py", base=base, icon="logo.ico", target_name="Copy 
 packages = ["tkinter"]
 includes = ["tkinter.ttk", "json"]
 excludes = []
-include_files = ["data.json"] 
+include_files = ["data.json","logo.ico"] 
 
 options = {
     'build_exe': {

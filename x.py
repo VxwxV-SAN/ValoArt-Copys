@@ -35,25 +35,18 @@ class TextEditorApp:
             for col in range(6):
                 frame = tk.Frame(self.text_frame, bg=self.bg_color)
                 frame.grid(row=row, column=col, padx=5, pady=30)
-
-               
                 text_font = ("Courier New", 11)  
 
-                text_box = tk.Text(frame, width=26, height=13, wrap=tk.WORD, state="disabled",
+                text_box = tk.Text(frame, width=31, height=13, wrap=tk.WORD, state="disabled",
                                 bg=self.bg_color, fg=self.text_color, font=text_font)
-                text_box.pack()
-
                 button_frame = tk.Frame(frame, bg=self.bg_color)
                 button_frame.pack(side="bottom", fill="both", expand=True, padx=100, pady=10)
-
+                text_box.pack()
                 copy_button = tk.Button(button_frame, text="Copiar", command=lambda tb=text_box: self.copy_text(tb), bg="#8AE29D")
                 copy_button.pack(side="right", padx=5)
-
                 edit_button = tk.Button(button_frame, text="Editar", command=lambda tb=text_box: self.edit_text(tb), bg="#A4D6E2")
                 edit_button.pack(side="left", padx=5)
-
                 self.text_list.append((text_box, copy_button, edit_button))
-
         self.text_frame.update_idletasks()  
         self.canvas.config(scrollregion=self.canvas.bbox("all"))
 
@@ -85,17 +78,22 @@ class TextEditorApp:
         popup.geometry(f"{popup_width}x{popup_height}+{x}+{y}")
         
         popup.configure(bg=self.bg_color)  
-        
-        edited_text = tk.Text(popup, width=26, height=13, wrap=tk.WORD, bg="white", fg="black")  
-        edited_text.pack(padx=20, pady=20)
 
-        edited_text.insert("1.0", current_text)
+        icon_path = "logo.ico"
+        popup.iconbitmap(icon_path)
+        text_font = ("Courier New", 11)
+        edited_text = tk.Text(popup, width=30, height=13, wrap=tk.WORD, bg="white", fg="black",font=text_font)  
+        edited_text.pack(padx=20, pady=20)
 
         continue_button = tk.Button(popup, text="Continuar", command=lambda: self.continue_edit(text_box, edited_text.get("1.0", "end-1c"), popup), bg="#8AE29D")
         continue_button.pack(pady=10)
 
         cancel_button = tk.Button(popup, text="Cancelar", command=popup.destroy, bg="#E28A8A")
+
         cancel_button.pack()
+
+        edited_text.tag_configure("center", justify="center")
+        edited_text.insert("1.0", current_text,"center")
 
     def continue_edit(self, text_box, edited_text, popup):
         updated_text = self._update_text_in_list(text_box, edited_text)
@@ -131,8 +129,10 @@ class TextEditorApp:
                     if idx < len(data):
                         text_box.configure(state="normal")
                         text_box.delete("1.0", "end")
-                        text_content = data[idx].replace("\n", "")
-                        text_box.insert("1.0", text_content)
+                        text_box.tag_configure("center", justify="center")
+                        text_box.insert("1.0", data[idx],"center")
+
+
                         text_box.configure(state="disabled")
         except FileNotFoundError:
             pass
@@ -143,5 +143,6 @@ class TextEditorApp:
 
 if __name__ == "__main__":
     root = tk.Tk()
+    root.iconbitmap("logo.ico")
     app = TextEditorApp(root)
     app.run()
