@@ -6,7 +6,7 @@ Bienvenidos al repositorio Biblioteca ValoArt Copys. Este es un proyecto en desa
 
 ## [Descargar](https://github.com/VxwxV-SAN/ValoArt-Copys/releases/download/1.1/ValoArt.Copys.zip)
 
-![Captura de Pant![miau](https://github.com/VxwxV-SAN/biblioteca-de-copy-pastes/assets/143349085/f273c7de-8a93-4054-a460-3a027e8dd365)
+![Captura de Pantalla](https://github.com/VxwxV-SAN/ValoArt-Copys/assets/143349085/9d9eb70c-78b3-4aef-896f-06a89f1c42c6)
 
 ## Instalación 
 - Si descargas directamente el repositorio, solo debes descargar, descomprimir y ejecutar "Copy Pastes.exe". También puedes crear un acceso directo en el escritorio para tenerlo más a mano.
