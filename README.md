@@ -4,9 +4,9 @@
 
 Bienvenidos al repositorio Biblioteca ValoArt Copys. Este es un proyecto en desarrollo que te permite almacenar dibujos en modo pixel art para el chat del juego Valorant.
 
-## [Descargar](https://github.com/VxwxV-SAN/ValoArt-Copys/releases/download/1.0/ValoArt.Copys.zip)
+## [Descargar](https://github.com/VxwxV-SAN/ValoArt-Copys/releases/download/1.1/ValoArt.Copys.zip)
 
-![Captura de Pantalla 1](https://github.com/VxwxV-SAN/biblioteca-de-copy-pastes/assets/143349085/f273c7de-8a93-4054-a460-3a027e8dd365)
+![Captura de Pant![miau](https://github.com/VxwxV-SAN/biblioteca-de-copy-pastes/assets/143349085/f273c7de-8a93-4054-a460-3a027e8dd365)
 
 ## Instalación 
 - Si descargas directamente el repositorio, solo debes descargar, descomprimir y ejecutar "Copy Pastes.exe". También puedes crear un acceso directo en el escritorio para tenerlo más a mano.
