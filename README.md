@@ -12,4 +12,4 @@ Bienvenidos al repositorio Biblioteca ValoArt Copys. Este es un proyecto en desa
 - Si descargas directamente el repositorio, solo debes descargar, descomprimir y ejecutar "Copy Pastes.exe". También puedes crear un acceso directo en el escritorio para tenerlo más a mano.
 - Si has descargado el código previamente, lamento que esté un poco desordenado. Hay un archivo .bat para convertir el archivo .py en un ejecutable. Recuerda que "data.json" debe estar dentro de la carpeta del ejecutable para que el código funcione.
 
-## [Servidor de discord donde encontrar y compartir dibujos](https://discord.gg/7xmvZYebeu)
+## [Servidor de discord donde encontrar y compartir dibujos](https://discord.gg/MT252wJAgw)
