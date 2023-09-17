@@ -2,11 +2,14 @@ import tkinter as tk
 from tkinter import simpledialog
 from tkinter import ttk
 import json
-
+import pyautogui
+import pygetwindow as gw
+import time
+pyautogui.FAILSAFE = False
 class TextEditorApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("Copy Pastes VxwxV")
+        self.root.title("Copy Pastes Gekko Rida")
         self.root.state("zoomed")
         self.bg_color = "#2E2E2E"
         self.text_color = "#FFFFFF"
@@ -31,7 +34,7 @@ class TextEditorApp:
         onmousewheel(self.canvas, lambda e: self.canvas.yview_scroll(int(-0.01 * e.delta), "units"))
 
 
-        for row in range(9):
+        for row in range(20):
             for col in range(6):
                 frame = tk.Frame(self.text_frame, bg=self.bg_color)
                 frame.grid(row=row, column=col, padx=5, pady=30)
@@ -40,23 +43,21 @@ class TextEditorApp:
                 text_box = tk.Text(frame, width=31, height=13, wrap=tk.WORD, state="disabled",
                                 bg=self.bg_color, fg=self.text_color, font=text_font)
                 button_frame = tk.Frame(frame, bg=self.bg_color)
-                button_frame.pack(side="bottom", fill="both", expand=True, padx=100, pady=10)
+                button_frame.pack(side="bottom", fill="both", expand=True, padx=44, pady=10)
                 text_box.pack()
-                copy_button = tk.Button(button_frame, text="Copiar", command=lambda tb=text_box: self.copy_text(tb), bg="#8AE29D")
-                copy_button.pack(side="right", padx=5)
-                edit_button = tk.Button(button_frame, text="Editar", command=lambda tb=text_box: self.edit_text(tb), bg="#A4D6E2")
+                edit_button = tk.Button(button_frame, text="Editar", command=lambda tb=text_box: self.edit_text(tb), bg="#81a3d0")
                 edit_button.pack(side="left", padx=5)
+                copy_button = tk.Button(button_frame, text="Copiar", command=lambda tb=text_box: self.copy_text(tb), bg="#12af83")
+                copy_button.pack(side="left", padx=5)
+                inject_button = tk.Button(button_frame, text="Todos", command=lambda tb=text_box: self.todos(tb), bg="#aaaacc")
+                inject_button.pack(side="right", padx=5)
+                inject_button = tk.Button(button_frame, text="Equipo", command=lambda tb=text_box: self.equipo(tb), bg="#dfcfd9")
+                inject_button.pack(side="right", padx=5)
+
                 self.text_list.append((text_box, copy_button, edit_button))
         self.text_frame.update_idletasks()  
         self.canvas.config(scrollregion=self.canvas.bbox("all"))
 
-
-
-    def copy_text(self, text_box):
-        selected_text = text_box.get("1.0", "end-1c")
-        self.root.clipboard_clear()
-        self.root.clipboard_append(selected_text)
-        self.root.update()
 
     def edit_text(self, text_box):
         if text_box.cget("state") == "normal":
@@ -104,6 +105,55 @@ class TextEditorApp:
             text_box.configure(state="disabled")
             self.save_data_to_json("data.json") 
         popup.destroy()
+
+    def copy_text(self, text_box):
+        selected_text = text_box.get("1.0", "end-1c")
+        self.root.clipboard_clear()
+        self.root.clipboard_append(selected_text)
+        self.root.update()
+
+    def equipo(self, text_box):
+        self.copy_text(text_box)
+
+        valo_window = None
+        for window in gw.getAllTitles():
+            if "VALORANT" in window:
+                valo_window = gw.getWindowsWithTitle(window)[0]
+                break
+
+        if valo_window:
+            try:
+                valo_window.activate()
+                time.sleep(0.5)
+                pyautogui.press('enter')
+                pyautogui.hotkey('ctrl', 'v')
+                pyautogui.press('enter')
+            except Exception as e:
+                print(f"Error: {e}")
+        else:
+            print("La ventana de 'Valorant' no está abierta.")
+        
+    def todos(self, text_box):
+        self.copy_text(text_box)
+
+        valo_window = None
+        for window in gw.getAllTitles():
+            if "VALORANT" in window:
+                valo_window = gw.getWindowsWithTitle(window)[0]
+                break
+
+        if valo_window:
+            try:
+                valo_window.activate()
+                time.sleep(0.5)
+                pyautogui.press('enter')
+                pyautogui.write('/all')
+                pyautogui.hotkey('ctrl', 'v')
+                pyautogui.press('enter')
+            except Exception as e:
+                print(f"Error: {e}")
+        else:
+            print("La ventana de 'Valorant' no está abierta.")
 
     def _update_text_in_list(self, text_box, edited_text):
         for tb, _, _ in self.text_list:
