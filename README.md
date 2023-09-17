@@ -4,7 +4,7 @@
 
 Bienvenidos al repositorio Biblioteca ValoArt Copys. Este es un proyecto en desarrollo que te permite almacenar dibujos en modo pixel art para el chat del juego Valorant.
 
-## [Descargar](https://github.com/VxwxV-SAN/ValoArt-Copys/releases/download/1.1/ValoArt.Copys.zip)
+## [Descargar](https://github.com/VxwxV-SAN/ValoArt-Copys/releases/download/1.2/ValoArtCopys.1.2.zip)
 
 ![Captura de Pantalla](https://github.com/VxwxV-SAN/ValoArt-Copys/assets/143349085/06765635-07e9-4edf-8498-c74ffe38f0dc)
 
